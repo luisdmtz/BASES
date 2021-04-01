@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Administrador Lubo Go</title>
+  <!-- time piker -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <!-- Custom fonts for this template-->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<!-- loaderpage -->
+<link rel="stylesheet" href="./css/loaderpage.css">
+  <!-- Custom styles for this template-->
+  <link href="../css/sb-admin-2-index.css" rel="stylesheet">
+
+</head>
+<div class="loader-page" id="loaderPage"></div>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <div id="topBar"></div>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Agregar Promoción/Anuncio</h1>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="p-5">
+                <div>
+                <p> Información General </p>
+                <form class="user" id="formRegistrarPromoAnuncio">
+                  <input type="hidden" name="id_Establecimiento" id="id_Establecimiento" value=0>
+                  <!-- titulo nota -->
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <label class="small font-weight-bold" >&nbsp;&nbsp;Titulo</label>
+                      <input type="text" class="form-control form-control-user" id="titulo" placeholder="">
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="small font-weight-bold" >&nbsp;&nbsp;Nota</label>
+                      <input type="text" class="form-control form-control-user" id="nota" placeholder="">
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="form-group">
+                      <!-- <input type="text" class="form-control form-control-user" id="detalle" placeholder="Descripción de la Promoción | Anuncio"> -->
+                     <textarea class="form-control form-control-user" id="detalle" placeholder="Descripción de la Promoción | Anuncio"></textarea>
+                  </div>
+                  <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <label class="small font-weight-bold" >&nbsp;&nbsp;Establecimiento </label>
+                    <select name="establecimiento" id="establecimiento" class="form-control">
+                    </select>
+                  </div>
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <label class="small font-weight-bold" >&nbsp;&nbsp;Seleccionar Tipo</label>
+                    <select name="promoAnuncio" id="promoAnuncio" class="form-control">
+                   </select>
+                  </div>
+                 </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <label class="small font-weight-bold" >&nbsp;&nbsp;Descuento</label>
+                    <input type="text" class="form-control form-control-user" id="montoDescuento" placeholder="">
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="small font-weight-bold" >&nbsp;&nbsp;Código de Descuento</label>
+                    <input type="text" class="form-control form-control-user" id="codigoDescuento" placeholder="">
+                  </div>
+                </div>
+                <div  class="small font-weight-bold">
+                  <h7>Fecha de expiracion: <input type="date" id="fechaExpiracion"> 
+                </div>
+                  
+                  <div class="col-sm-12">
+                    <center><input type="submit" id="botonRegistrarPromoAnuncio" class="btn btn-primary btn-user " value="Registrar Promoción/Anuncio"></center>
+                  </div>
+                  
+                </form>
+                <div class="col-lg-12" id="divImagenes" style="display: none;">
+                  <p>Imagenes</p>
+                      <input type="hidden" id="idPromocion" value="0">
+                      <img src="#" id="imagenPromocion" class="rounded-circle" width="124" height="93">
+                      <br>
+                  <label class="mall font-weight-bold">Imagen de Promocion o anuncio:</label>
+                    <form id="formImagenPromocion">
+                      <input type="file" name ="img" class="form-control-file" id="imgPromocion">
+                    </form>
+                  <p></p>
+                </div>
+                <p></p>
+              </div>
+                <br>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <!-- <span>Copyright &copy; Startdust Inc SA. de CV. 2020</span> -->
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Desea Cerrar Sesión?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">A continuación seleccione "Salir" si está listo para finalizar su sesión actual.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="login.html">Salir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- scrip date piker -->
+  
+  <!-- Bootstrap core JavaScript-->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../js/sb-admin-2.min.js"></script>
+
+   <!-- events de la pagina -->
+   <script src="js/agregar-promoAnuncio.js" type="module"></script>
+</body>
+
+</html>

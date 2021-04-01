@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Administrador Lubo Go</title>
+  <!-- time piker -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <!-- Custom fonts for this template-->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<!-- loaderpage -->
+<link rel="stylesheet" href="./css/loaderpage.css">
+  <!-- Custom styles for this template-->
+  <link href="../css/sb-admin-2-index.css" rel="stylesheet">
+
+</head>
+<div class="loader-page" id="loaderPage"></div>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <div id="topBar"></div>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Agregar Establecimiento</h1>
+          <div class="row">
+            <input type="submit" id="btnAgregarProdducto" class="btn btn-primary btn-user " value="Agregar Productos">
+            <!-- <p class="form">
+              <a href="agregar-admin.html" class="btn btn-primary btn-icon-split">
+                <span class="icon text-white-50">
+                  <i class="fas fa-plus"></i>
+                </span>
+                <span class="text">Agregar Estableciemientos</span>
+              </a>
+            </p> -->
+            <!-- <div class="my-2"></div> -->
+            <div class="col-lg-12">
+              <div class="p-5">
+                <div>
+                <p> Informacion General </p>
+                <form class="user" id="formRegistrarAE">
+                  <input type="hidden" name="idEstablecimiento" id="idEstablecimiento">
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="nombre" placeholder="Nombre del Establecimiento">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="telefono" placeholder="Teléfono">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-user" id="email" placeholder="Email">
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <label class="small font-weight-bold" >&nbsp;&nbsp;Categoria </label>
+                      <select name="categoria" id="categoria" class="form-control">
+
+                      </select>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="small font-weight-bold" >&nbsp;&nbsp;SubCategoria </label>
+                      <select disabled name="subCategoria" id="subCategoria" class="form-control selectpicker" multiple>
+
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <label class="small font-weight-bold" >&nbsp;&nbsp;Ciudad </label>
+                      <select name="ciudad" id="ciudad" class="form-control" >
+                        
+                      </select>
+                    </div>
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <label class="small font-weight-bold" >&nbsp;&nbsp;Administrador (seleccione una opción) </label>
+                      <select name="administrador" id="administrador" class="form-control" >
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="small font-weight-bold" >&nbsp;&nbsp;Informacion </label>
+                    <textarea class="form-control" id="informacion" rows="3"></textarea>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label class="small font-weight-bold" >&nbsp;&nbsp;Etiquetas </label>
+                    <textarea class="form-control" id="etiquetas" rows="3"></textarea>
+
+                  </div>
+                  <div class="col-sm-12">
+                    <center><input type="submit" id="botonRegistrarEstab" class="btn btn-primary btn-user " value="Registrar Estableciemiento"></center>
+                  </div>
+                  
+                </form>
+                <p></p>
+              </div>
+                <div id="divDireccion" style="display: none;">
+                  <p>Direccion</p>
+                  <form class="user" id="formGuardarDir">
+                    <input type="hidden" id="idDireccion" value="0">
+                    <div class="form-group row">
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user" id="Calle" placeholder="Calle">
+                      </div>
+                      <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-user" id="numeroExterior" placeholder="Num. Ex.">
+                      </div>
+                      <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-user" id="numeroInterior" placeholder="Num. Int.">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-user" id="CodPostal" placeholder="CP">
+                      </div>
+                      <div class="col-sm-9">
+                        <select name="Colonia" id="Colonia" class="form-control">
+                          
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" id="Municipio" placeholder="Municipio">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" id="Ciudad" placeholder="Ciudad">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" id="Estado" placeholder="Estado">
+                      </div>
+                    </div>
+                    <p>Mapa de Ubicaccion</p>
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" id="Latitud" placeholder="Latitud">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" id="Longitud" placeholder="Longitud">
+                      </div>
+                    </div>
+                    <div class="form-group row col-12" style="height: 350px;">
+                      
+                      <div id="map" style="margin-top:0%; width: 100%; "></div>
+                      <script
+                          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTIicwf3BYPHc3YKWLpv3d_ByEHwUABuo">
+                      </script>
+                    </div>
+                    <div class="col-sm-12">
+                      <center><input type="submit" id="botonGuardarDir" class="btn btn-primary btn-user " value="Guradar Direccion"></center>
+                    </div>
+                    
+                  </form>
+                </div>
+                <br>
+                <div class="col-lg-12" id="divImagenes" style="display: none;">
+                <p>Imagenes</p>
+                <div class="card mb-4">
+                  <!-- <div class="card-header">
+                    Default Card Example
+                  </div> -->
+                  <div id="imgPortada" class="card-body">
+                    <img src="#" id="imgPerfil" class="rounded-circle" width="124" height="93">
+                    <!-- This card uses Bootstrap's default styling with no utility classes added. Global styles are the only things modifying the look and feel of this default card example. -->
+                  </div>
+                </div>
+                <label class="mall font-weight-bold">Foto de perfil:</label>
+                  <form id="formFotoPerfilEstab">
+                    <input type="file" name ="img" class="form-control-file" id="imaperfil">
+                  </form>
+                  <p></p>
+                <label class="mall font-weight-bold">Foto de portada:</label>
+                  <form id="formFotoPortadaEstab">
+                    <input type="file" name ="img" class="form-control-file" id="imaportada">
+                  </form>
+                <br>
+                <label class="mall font-weight-bold">Fotos de galeria:(agregar fotos - maximo 10)</label>
+                  <form id="formGaleriaEstab">
+                    <input type="file" name ="img" class="form-control-file" id="imagaleria">
+                  </form>
+                <br>
+                <label class="mall font-weight-bold"> GALERIA DE IMAGENES </label>
+                  <div class="col-lg-12">
+                      <div class="card-columns" id="galeria">
+
+                      </div>
+                  </div>
+                <p>
+
+                </p>
+                </div>
+                <!-- inicio tabla horarios -->
+                <div class="col-lg-12" id="divHorarios" style="display: none;">
+                  <p> Horario Laboral </p>
+                <table class="table">
+                  <thead class="col-12">
+                    <tr>
+                      <th >#</th>
+                      <th >Activo</th>
+                      <th >Dia</th>
+                      <th >Apertura</th>
+                      <th >Cierre</th>
+                    </tr>
+                  </thead>
+                  <tbody id = "tbHorarios">
+                    <input type="hidden" id="existeHorario" value = "0">
+                    <tr>
+                      <th scope="row">1</th>
+                      <td><input name="checkboxdia1" id="checkboxdia1" type="checkbox"></td>
+                      <td>Lunes</td>
+                      <td><input id ="timeA1" disabled width="110px"></td>
+                      <td><input id="timeC1" disabled width="110px"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td><input  name="checkboxdia2" id="checkboxdia2" type="checkbox" ></td>
+                      <td>Martes</td>
+                      <td><input id ="timeA2" disabled width="110px"></td>
+                      <td><input id="timeC2" disabled width="110px"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td><input  name="checkboxdia3" id="checkboxdia3" type="checkbox" ></td>
+                      <td>Miercoles</td>
+                      <td><input id ="timeA3" disabled width="110px"></td>
+                      <td><input id="timeC3" disabled width="110px"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td><input  name="checkboxdia4" id="checkboxdia4" type="checkbox" ></td>
+                      <td>Jueves</td>
+                      <td><input id ="timeA4" disabled width="110px"></td>
+                      <td><input id="timeC4" disabled width="110px"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td><input  name="checkboxdia5" id="checkboxdia5" type="checkbox" ></td>
+                      <td>Viernes</td>
+                      <td><input id ="timeA5" disabled width="110px"></td>
+                      <td><input id="timeC5" disabled width="110px"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <td><input name="checkboxdia6" id="checkboxdia6" type="checkbox" ></td>
+                      <td>Sabado</td>
+                      <td><input id ="timeA6" disabled width="110px"></td>
+                      <td><input id="timeC6" disabled width="110px"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">7</th>
+                      <td><input  name="checkboxdia7" id="checkboxdia7" type="checkbox" ></td>
+                      <td>Domingo</td>
+                      <td><input id ="timeA7" disabled width="110px"></td>
+                      <td><input id="timeC7" disabled width="110px"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="col-sm-12">
+                  <center>
+                    <a href="#" class="btn btn-success btn-icon-split" id="botonAltaHorarios">
+                      <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                      </span>
+                      <span class="text">Dar de Alta Horarios</span>
+                    </a>
+                  </center>
+                </div>
+              
+            </div>
+                <!-- fin horarios -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <!-- <span>Copyright &copy; Startdust Inc SA. de CV. 2020</span> -->
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Desea Cerrar Sesión?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">A continuación seleccione "Salir" si está listo para finalizar su sesión actual.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="login.html">Salir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- scrip date piker -->
+  <script>
+    // lunes
+      $(`#timeA1`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      $(`#timeC1`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      // martes
+      $(`#timeA2`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      $(`#timeC2`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      // miercoles
+      $(`#timeA3`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      $(`#timeC3`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      // jueves
+      $(`#timeA4`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      $(`#timeC4`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      // viernes
+      $(`#timeA5`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      $(`#timeC5`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      // sabado
+      $(`#timeA6`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      $(`#timeC6`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      // domingo
+      $(`#timeA7`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+      $(`#timeC7`).timepicker({
+            uiLibrary: 'bootstrap4'
+      });
+  </script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../js/sb-admin-2.min.js"></script>
+
+   <!-- events de la pagina -->
+   <script src="js/agregar-estab.js" type="module"></script>
+</body>
+
+</html>

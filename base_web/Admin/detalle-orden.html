@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Administrador Lubo Go</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <!-- loaderpage -->
+  <link rel="stylesheet" href="./css/loaderpage.css">
+  <!-- Custom styles for this template-->
+  <link href="../css/sb-admin-2-index.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+</head>
+<div class="loader-page" id="loaderPage"></div>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <div id="topBar"></div>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+
+          <h1 class="h3 mb-4 text-gray-800">Detalle de Orden</h1>
+          <div class="col-lg-12">
+            <select style="display: none;" name="ciudad" id="ciudad" class="form-control" >
+            </select>
+            <!-- <label class="form-control" id="numeroConductores"></label> -->
+            <div class="p-5">
+              <center>
+                <div id="map" style="margin-top:0%;margin-right:0%; width:100%;height: 500px;border-color: rgb(214, 23, 198);"></div>
+              </center>
+              <br>
+              <center>
+                <div class="col-lg-12" >
+                    <p id="DescripcionOrden"></p>
+                    <label id="Direccion"  for="" class="form-control" ></label>
+                    <label id="NombreEntregarA" class ="form-control" for=""></label>
+                    <label id="TelefonoEstablecimiento" class ="form-control" for=""></label>
+                    <label id="TelefonoUsuario" class ="form-control" for=""></label>
+                    <label id="StatusOrden" class ="form-control" for=""></label>
+                    <label id="NombreEstablecimiento" class ="form-control" for=""></label>
+                    <p style="height: 50px;" class="form-control"><b> Url Origen: </b><label id="urlOrigen"></label> <button id="bCopyOr" type="button" class="btn btn-outline-success"><i class="fa fa-copy"></i></button> <label style="color: green;" id="successOrigen"></label> </p>
+                    <p style="height: 50px;" class="form-control"><b> Url Destino: </b><label id="urlDestino"></label> <button id="bCopyDes" type="button" class="btn btn-outline-success"><i class="fa fa-copy"></i></button> <label style="color: green;" id="successDestino"></label></p>
+                </div>
+            </center>
+            </div>
+          </div>
+          <!--  -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <!-- <span>Copyright &copy; Your Website 2020</span> -->
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!--Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../js/sb-admin-2.min.js"></script>
+   <!-- events de la pagina -->
+   <script src="js/detalle-orden.js" type="module"></script>
+   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTIicwf3BYPHc3YKWLpv3d_ByEHwUABuo"></script> 
+</body>
+
+</html>
